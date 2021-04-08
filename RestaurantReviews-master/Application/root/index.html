@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sentiment Analysis</title>
+        <!-- Links and scripts -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type = "text/css" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+        <script type="text/javascript" src="js/index.js" charset="utf-8"></script>
+
+        <!-- Inline styles -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Sentiment Analysis</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="navbar-item" id="Model Predictions-list">
+                        <a class="tablinks" href="#" onclick="openTab(event, 'Model Predictions');">Model Predictions</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>  
+
+        <!-- Tab content -->
+        <div id="Model Predictions" class="tabcontent">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="tabnavbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand">Model Predictions</h3>
+                    </div>
+                    <ul class="nav navbar-nav" id="tabclose">
+                        <li>
+                            <a href="#" onclick="closeTab('Model Predictions')">x</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav> 
+            <p>User Interface for prediction of sentiment of reviews</p>
+            <br>
+            <div class="form-container">
+                <form id="inputForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label>Review</label>
+                            <textarea class="form-control" rows=1 type="text" required="true" placeholder="Enter the review" name="formReview" form="inputForm"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input class="button" type="submit" value="Submit"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <p style="visibility: hidden; line-height: 100%;">Just occupy space</p>
+            <hr>
+            <br>
+            <div class="form-container">
+                <form id="outForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <h3 id="predict-header">Loading...</h3>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="predict-body">Review</label>
+                            <br>
+                            <label class="predict-body" id="predict-review"></label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="predict-body">Sentiment</label>
+                            <br>
+                            <label class="predict-body" id="predict-output"></label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="predict-body">and was predicted with a score of </label>
+                            <br>
+                            <label class="predict-body" id="predict-score"></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
